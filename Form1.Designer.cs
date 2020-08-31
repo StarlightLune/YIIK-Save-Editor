@@ -331,7 +331,14 @@
             this.ClassSammy = new System.Windows.Forms.TextBox();
             this.InPartySammy = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label141 = new System.Windows.Forms.Label();
+            this.AddToInv = new System.Windows.Forms.Button();
+            this.ItemCountBox = new System.Windows.Forms.NumericUpDown();
+            this.ItemNameBox = new System.Windows.Forms.TextBox();
+            this.label139 = new System.Windows.Forms.Label();
+            this.InventoryBox = new System.Windows.Forms.ListBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.ResetWhistle = new System.Windows.Forms.Button();
             this.Enemies_Overworld = new System.Windows.Forms.Button();
             this.label131 = new System.Windows.Forms.Label();
             this.Enemies_MonsterDens = new System.Windows.Forms.Button();
@@ -374,13 +381,6 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.ResetWhistle = new System.Windows.Forms.Button();
-            this.InventoryBox = new System.Windows.Forms.ListBox();
-            this.label139 = new System.Windows.Forms.Label();
-            this.ItemNameBox = new System.Windows.Forms.TextBox();
-            this.ItemCountBox = new System.Windows.Forms.NumericUpDown();
-            this.AddToInv = new System.Windows.Forms.Button();
-            this.label141 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.CharacterTabs.SuspendLayout();
@@ -473,6 +473,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SammyHP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SammyLevel)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemCountBox)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MasterVolume)).BeginInit();
@@ -482,7 +483,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Controller)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UIColor)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemCountBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -658,7 +658,7 @@
             // 
             this.AlexWeapon.FormattingEnabled = true;
             this.AlexWeapon.Items.AddRange(new object[] {
-            "He Wants It That Way (Single)",
+            "He Wants it That Way (Single)",
             "Sergeant Salty EP",
             "Strolling Bonez LP",
             "LeGrande by Arse-man (Single)",
@@ -4155,6 +4155,57 @@
             this.tabPage3.Text = "Items";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Location = new System.Drawing.Point(284, 71);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(264, 39);
+            this.label141.TabIndex = 8;
+            this.label141.Text = "Enter an item name in the text box, enter in the amount\r\nin the second text box, " +
+    "and then click the button to\r\nset the item count for that item.";
+            // 
+            // AddToInv
+            // 
+            this.AddToInv.Location = new System.Drawing.Point(282, 45);
+            this.AddToInv.Name = "AddToInv";
+            this.AddToInv.Size = new System.Drawing.Size(266, 23);
+            this.AddToInv.TabIndex = 6;
+            this.AddToInv.Text = "Set Item Count for Entered Item";
+            this.AddToInv.UseVisualStyleBackColor = true;
+            this.AddToInv.Click += new System.EventHandler(this.AddToInv_Click);
+            // 
+            // ItemCountBox
+            // 
+            this.ItemCountBox.Location = new System.Drawing.Point(473, 19);
+            this.ItemCountBox.Name = "ItemCountBox";
+            this.ItemCountBox.Size = new System.Drawing.Size(75, 20);
+            this.ItemCountBox.TabIndex = 5;
+            // 
+            // ItemNameBox
+            // 
+            this.ItemNameBox.Location = new System.Drawing.Point(282, 19);
+            this.ItemNameBox.Name = "ItemNameBox";
+            this.ItemNameBox.Size = new System.Drawing.Size(185, 20);
+            this.ItemNameBox.TabIndex = 4;
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Location = new System.Drawing.Point(6, 3);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(118, 13);
+            this.label139.TabIndex = 2;
+            this.label139.Text = "Item Name (Item Count)";
+            // 
+            // InventoryBox
+            // 
+            this.InventoryBox.FormattingEnabled = true;
+            this.InventoryBox.Location = new System.Drawing.Point(6, 19);
+            this.InventoryBox.Name = "InventoryBox";
+            this.InventoryBox.Size = new System.Drawing.Size(270, 316);
+            this.InventoryBox.TabIndex = 0;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.ResetWhistle);
@@ -4174,6 +4225,16 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Enemies";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // ResetWhistle
+            // 
+            this.ResetWhistle.Location = new System.Drawing.Point(6, 238);
+            this.ResetWhistle.Name = "ResetWhistle";
+            this.ResetWhistle.Size = new System.Drawing.Size(542, 23);
+            this.ResetWhistle.TabIndex = 9;
+            this.ResetWhistle.Text = "Reset Whistle Fights";
+            this.ResetWhistle.UseVisualStyleBackColor = true;
+            this.ResetWhistle.Click += new System.EventHandler(this.ResetWhistle_Click);
             // 
             // Enemies_Overworld
             // 
@@ -4564,14 +4625,14 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveToolStripMenuItem.Text = "Save As";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -4585,67 +4646,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // ResetWhistle
-            // 
-            this.ResetWhistle.Location = new System.Drawing.Point(6, 238);
-            this.ResetWhistle.Name = "ResetWhistle";
-            this.ResetWhistle.Size = new System.Drawing.Size(542, 23);
-            this.ResetWhistle.TabIndex = 9;
-            this.ResetWhistle.Text = "Reset Whistle Fights";
-            this.ResetWhistle.UseVisualStyleBackColor = true;
-            this.ResetWhistle.Click += new System.EventHandler(this.ResetWhistle_Click);
-            // 
-            // InventoryBox
-            // 
-            this.InventoryBox.FormattingEnabled = true;
-            this.InventoryBox.Location = new System.Drawing.Point(6, 19);
-            this.InventoryBox.Name = "InventoryBox";
-            this.InventoryBox.Size = new System.Drawing.Size(270, 316);
-            this.InventoryBox.TabIndex = 0;
-            // 
-            // label139
-            // 
-            this.label139.AutoSize = true;
-            this.label139.Location = new System.Drawing.Point(6, 3);
-            this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(118, 13);
-            this.label139.TabIndex = 2;
-            this.label139.Text = "Item Name (Item Count)";
-            // 
-            // ItemNameBox
-            // 
-            this.ItemNameBox.Location = new System.Drawing.Point(282, 19);
-            this.ItemNameBox.Name = "ItemNameBox";
-            this.ItemNameBox.Size = new System.Drawing.Size(185, 20);
-            this.ItemNameBox.TabIndex = 4;
-            // 
-            // ItemCountBox
-            // 
-            this.ItemCountBox.Location = new System.Drawing.Point(473, 19);
-            this.ItemCountBox.Name = "ItemCountBox";
-            this.ItemCountBox.Size = new System.Drawing.Size(75, 20);
-            this.ItemCountBox.TabIndex = 5;
-            // 
-            // AddToInv
-            // 
-            this.AddToInv.Location = new System.Drawing.Point(282, 45);
-            this.AddToInv.Name = "AddToInv";
-            this.AddToInv.Size = new System.Drawing.Size(266, 23);
-            this.AddToInv.TabIndex = 6;
-            this.AddToInv.Text = "Set Item Count for Entered Item";
-            this.AddToInv.UseVisualStyleBackColor = true;
-            this.AddToInv.Click += new System.EventHandler(this.AddToInv_Click);
-            // 
-            // label141
-            // 
-            this.label141.AutoSize = true;
-            this.label141.Location = new System.Drawing.Point(284, 71);
-            this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(264, 39);
-            this.label141.TabIndex = 8;
-            this.label141.Text = "Enter an item name in the text box, enter in the amount\r\nin the second text box, " +
-    "and then click the button to\r\nset the item count for that item.";
             // 
             // Form1
             // 
@@ -4758,6 +4758,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SammyLevel)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemCountBox)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
@@ -4770,7 +4771,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.UIColor)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemCountBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

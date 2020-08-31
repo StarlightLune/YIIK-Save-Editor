@@ -109,6 +109,7 @@ namespace YIIK_Save_Editor
                     save["WhatSeasonIsIt"]["Season"] = "0";
                     break;
             }
+            save["SaveEditor"]["eco asked me to put a line in here that proves it's been edited by the save editor"] = "blame eco";
             save["Alex"]["level"] = AlexLevel.Value.ToString();
             save["Alex"]["hp"] = AlexHP.Value.ToString();
             save["Alex"]["maxHP"] = AlexMHP.Value.ToString();
@@ -680,7 +681,7 @@ namespace YIIK_Save_Editor
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Version 1.0. " +
+            MessageBox.Show($"Version 1.02. " +
                 $"Developed by StarlightLune with help from firubii.", "YIIK: A Postmodern Save Editor");
         }
 
